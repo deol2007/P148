@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:black">
+
+    <a-camera position="0 8 30"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets timeout="10000">
+      <!--adding the 3D model of each of the models-->
+      <a-asset-item id="cat" src="./models/cat/scene.gltf"></a-asset-item>
+
+      <a-asset-item id="bench" src="./models/bench/scene.gltf"></a-asset-item>
+
+      <a-asset-item id="lamppost" src="./models/lamp_post/scene.gltf"></a-asset-item>
+      
+      <a-asset-item id="tree" src="./models/tree/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <!-------------------------------------Circular Plane----------------------------------------------->
+
+     <a-circle position="-0.4 -0.76 -25" rotation="-90 0 0" radius="10" shadow="receive: true" visible="true"
+      src="image/pavment.jpg">
+    </a-circle>
+
+    <!--------------------------------------GLTF Models----------------------------------------------------------->
+
+    <!--Bench-->
+    <a-entity>
+      <a-entity position="0 0 0" rotation="0 55 0" scale="10 10 10" gltf-model="#bench" shadow="cast: true;">
+      </a-entity>
+    </a-entity>
+
+    <!--Cat-->
+    <a-entity>
+      <a-entity position="0 5 4" rotation="0 0 0" scale="10 10 10" gltf-model="#cat"
+        shadow="cast: true; receive: false">
+      </a-entity>
+    </a-entity>
+
+    <!--Lamp Post-->
+    <a-entity>
+      <a-entity position="0 0 0" rotation="0 90 0" scale="8 8 8" gltf-model="#lamppost"
+        shadow="cast: true; receive: false">
+      </a-entity>
+    </a-entity>
+
+    <!--Trees-->
+    <a-entity>
+        <a-entity position="0 0 -10" rotation="0 90 0" scale="18 18 18" gltf-model="#tree"
+          shadow="cast: true; receive: false">
+        </a-entity>
+      </a-entity>
+</body>
+
+</html>
